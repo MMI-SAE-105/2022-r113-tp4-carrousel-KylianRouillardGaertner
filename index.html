@@ -57,5 +57,19 @@
             <li><a href="#ecran-5" :class="{actif:hrefCourant==='#ecran-5'}">ecran 5</a></li>
         </ul>
     </div>
+    <div class="accordeon" x-data="{sect: 1}">
+        <section id="premier">
+          <button @click="sect = 1">bouton 1</button>
+          <p x-show="sect === 1" x-transition.scale.origine.top.100>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt ut expedita doloremque atque explicabo, officia esse quod iure, obcaecati commodi reiciendis, soluta dolores placeat harum. Quod cumque ratione iste eius.</p>
+        </section>
+        <section id="second">
+          <button @click="sect = 2">bouton 2</button>
+          <p x-show="sect === 2" x-transition.scale.origine.top.100>Voluptates aut laboriosam quam vero, quaerat alias, suscipit aperiam laborum optio numquam maxime dolore cumque est nam iusto libero modi dolorem. Hic odio illum veniam, qui impedit at itaque! Deserunt.</p>
+        </section>
+        <section id="troisième">
+          <button @click="sect = 3">bouton 3</button>
+          <p x-show="sect === 3" x-transition.scale.origine.top.100>Ea, quaerat, voluptates inventore dolorem ab dolor quisquam cupiditate repellat doloremque delectus totam voluptatem facilis fugiat corporis ipsa odio incidunt ad cum qui id illo. Ipsam accusamus ex id officiis?</p>
+        </section>
+      </div>
 </body>
 </html>
