@@ -7,11 +7,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
 </head>
 <body>
     <div class="carrousel" x-data="{hrefCourant: '#ecran-1',}">
-        <button class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant" @click="$refs.parent.scrollLeft -= $refs.parent.clientWidth"><</button><button class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant" @click="$refs.parent.scrollLeft += $refs.parent.clientWidth">></button>
+        <button @click="const p = $refs.parent ; p.scrollLeft -= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&lt</button>
+        <button @click="const p = $refs.parent ; p.scrollLeft += p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&gt</button>
         <div class="carrousel_parent-ecrans" x-ref="parent" @scroll.debounce.250ms.passive="
         hrefCourant = '#'+
                           [...$refs.parent.children]
